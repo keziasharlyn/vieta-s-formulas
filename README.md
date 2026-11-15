@@ -68,5 +68,4 @@ We must consider the fact that these results do not represent all cubics since m
 
 ### 4. Conclusion
 
-To conclude, no matter the relative sizes, these errors are all still extremely small. It is very interesting to me to see proof of how accurate our computers are, to the order of magnitude of the diameter of nucleons, as compared to the height of humans. I also can say that I have a much clearer understanding of Vieta's formulas now.
-
+To conclude, across all the generated cubics, these errors are still extremely small, typically about $10^{-15}$. I would be interested to, in future, test my hypotheses and see whether the number of operations does influence the numerical error. But all in all, I did find this experiment to be a stimulating dive into an area of mathematics I'd never considered before (though it is certainly one thoroughly explored by mathematicians at large), and an effective way to familiarise myself with Python and its various modules.
