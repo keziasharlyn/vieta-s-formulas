@@ -22,7 +22,7 @@ I computed these sums and products algorithmically, then compared them with the 
 
 ## Methodology
 
-I used pandas for the data analysis, NumPy for the calculations, and Matplotlib to visualise the data. The coefficients were generated randomly using NumPy. I did not use a particular seed, but the generated polynomials can be viewed in the vieta_dataset.csv file. The roots were calculated using NumPy's polynomial root-finding functionality (''Polynomial.roots()''), and used them to calculate each relationship. These were the observed values. I compared the observed and expected values by calculating absolute errors:
+I used pandas for the data analysis, NumPy for the calculations, and Matplotlib to visualise the data. The coefficients were generated randomly using NumPy. I did not use a particular seed, but the generated polynomials can be viewed in the vieta_dataset.csv file. The roots were calculated using NumPy's polynomial root-finding functionality (``Polynomial.roots()``), and used them to calculate each relationship. These were the observed values. I compared the observed and expected values by calculating absolute errors:
 
 $$E_{\text{sum}} = \left| (r_1+r_2+r_3) - \left(-\frac{b}{a}\right) \right|$$
 
