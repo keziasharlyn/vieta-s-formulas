@@ -7,23 +7,33 @@ Vieta's formulas are relationships named for François Viète which relate the c
 ## Mathematics
 
 For a cubic polynomial equation with roots $r_1,r_2,r_3$, 
-$$
-ax^3 + bx^2 + cx + d = 0
-$$ 
+
+$$ax^3 + bx^2 + cx + d = 0$$ 
+
 The roots can be related with the sums and products by the following formulas:
+
 $$r_1 + r_2 + r_3 = -\frac{b}{a}$$
+
 $$r_1r_2 + r_1r_3 + r_2r_3 = \frac{c}{a}$$
+
 $$r_1r_2r_3 = -\frac{d}{a}$$
+
 I computed these sums and products algorithmically, then compared them with the expected values as given by the formulas to find the errors in the numerical computation.
 
 ## Methodology
 
 I used pandas for the data analysis, NumPy for the calculations, and Matplotlib to visualise the data. The coefficients were generated randomly using NumPy. I did not use a particular seed, but the generated polynomials can be viewed in the vieta_dataset.csv file. The roots were calculated using NumPy's polynomial root-finding functionality (''Polynomial.roots()''), and used them to calculate each relationship. These were the observed values. I compared the observed and expected values by calculating absolute errors:
+
 $$E_{\text{sum}} = \left| (r_1+r_2+r_3) - \left(-\frac{b}{a}\right) \right|$$
+
 $$E_{\text{pairs}} = \left| (r_1r_2+r_1r_3+r_2r_3) - \frac{c}{a} \right|$$
+
 $$E_{\text{product}} = \left| r_1r_2r_3 - \left(-\frac{d}{a}\right) \right|$$
+
 As well as relative errors:
+
 $$E_{\text{relative}} = \frac{|x_{\text{computed}}-x_{\text{expected}}|}{|x_{\text{expected}}|}$$
+
 I did note that relative error becomes undefined when the expected value is zero, so I set $1 \times 10^{-6}$ as the minimum threshold for the denominator. If the absolute value of the expected Vieta value (say, b/a, when calculating the sum of roots' relative error) was lower than the threshold, the relative error value would be omitted, though no such values occurred.
 Lastly, I plotted the data logarithmically $\left(\log_{10}(\bar{E}) \text{ and } \log_{10}(E_{\mathrm{median}})\right)$ for easier comparison.
 
